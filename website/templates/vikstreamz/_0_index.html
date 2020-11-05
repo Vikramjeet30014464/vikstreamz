@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.00, maximum-scale=1.00, minimum-scale=1.00 shrink-to-fit=no, user-scalable=no">
+
+	<!-- all stylesheets for main page including css for webplayer, webplayer-theme,bootstrap,jquery, animation plugin -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css" integrity="sha384-B4morbeopVCSpzeC1c4nyV0d0cqvlSAfyXVfrPJa25im5p+yEN/YmhlgQP/OyMZD" crossorigin="anonymous">
+	<!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+	<link href="{% static 'fa/css/all.css' %} " rel="stylesheet">
+	<link href="{% static 'css/custom.css' %} " rel="stylesheet">
+	<link href="{% static 'css/fonts.css' %} " rel="stylesheet">
+	<link href="{% static 'css/video-js.css' %} " rel="stylesheet">
+	<link href="{% static 'css/video-js.min.css' %} " rel="stylesheet">
+	<link href="{% static 'css/sea.css' %} " rel="stylesheet">
+	<link href="{% static 'css/animate.min.css' %} " rel="stylesheet">
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+
+	<!-- preloader shown before loading entire site -->
+	<div  id="preloader2" class="fa-4x   text-center  col-12" style="margin-top: 30vh;">
+		<h1 class="ml-2 text-primary">Loading Content...</h1>
+	</div>
+
+	<title>Vik-StreamZ - Watch LiveTv, Movies & Tv Shows Online</title>
+	
+</head>
+
+
+<body  class="animate__animated animate__fadeIn animate__slower 5s user-select-none">
+
+<!-- Main container -->
+	<div hidden class="container">
+
+		{% include "vikstreamz/_1_navbarTop.html" %} <!--  Navbrand and Logo html file -->
+
+			<div class="tabs">
+			 <!-- switchable tabs at sticked to bottom page, containing 3 majors categories> LIVETV,TVSHOWS, MOVIES -->
+				{% include "vikstreamz/_2_navtabBottom.html" %} 
+
+				<div id="myTabContent" class="tab-content ">
+					<div class="empty mb-2">&nbsp;</div>
+					<div class="empty mb-2">&nbsp;</div>
+					{% include "vikstreamz/_3_liveTv.html" %}  <!-- html file containing code for Live TV tab -->
+					{% include "vikstreamz/_4_Tvshows.html" %}  <!-- html file containing code for Tv-shows tab -->
+					{% include "vikstreamz/_5_Movies.html" %}  <!-- html file containing code for MOVIES tab -->
+					{% include "vikstreamz/_6_player_modal.html" %}  <!-- code for web player embed in bootstrap modal -->
+				</div> <!-- end id="myTabContent"  -->
+
+
+			</div> <!-- end class="tabs"  -->
+	</div> <!--  container  end -->
+
+
+
+	<!-- all scripts for main page -->
+	<script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+	<script src="{% static 'js/video.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="{% static 'js/videojs-http-streaming.js' %}"></script>
+	<!-- <script src="{% static 'fa/js/all.js' %}"></script> -->
+	<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

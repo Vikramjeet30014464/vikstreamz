@@ -1,0 +1,684 @@
+﻿
+<!-- 
+THIS FILE CONTAIN FULL COMPILED HTML FOR ALL PARTS NAMED AS _0_xxxx.html to _6_xxxx.html.
+THIS FILE CAN BE USED TO UNDERSTAND HOW ALL PARTS WILL LOOK AND FUNCTION AFTER THEY GET COMBINED BY FRAMEWORK.
+THIS FILE CAN BE USED A SINGLE  ONE PAGE ALTERNATIVE TO ALL SIX HTML FILES.
+ -->
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>	
+	<meta charset="utf-8">
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.00, maximum-scale=1.00, minimum-scale=1.00 shrink-to-fit=no, user-scalable=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css" integrity="sha384-B4morbeopVCSpzeC1c4nyV0d0cqvlSAfyXVfrPJa25im5p+yEN/YmhlgQP/OyMZD" crossorigin="anonymous">
+	 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="{% static 'fa/css/all.css' %} " rel="stylesheet">
+	<link href="{% static 'css/custom.css' %} " rel="stylesheet">
+	<link href="{% static 'css/fonts.css' %} " rel="stylesheet">
+	<link href="{% static 'css/video-js.css' %} " rel="stylesheet">
+	 <!-- <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" /> -->
+	<link href="{% static 'css/video-js.min.css' %} " rel="stylesheet">
+	<link href="{% static 'css/sea.css' %} " rel="stylesheet">
+	<link href="{% static 'css/animate.min.css' %} " rel="stylesheet">
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+
+	 <div  id="preloader2" class="fa-4x   text-center  col-12" style="margin-top: 30vh;">
+	 
+	 		<!-- <span><i class="fa  fa-3x fa-cog fa-spin text-primary"></i></span> -->
+	 			 <h1 class="ml-2 text-primary">Loading...</h1>
+	 
+	  		
+	 </div>
+
+	<title>Vik-StreamZ - Watch LiveTv, Movies & Tv Shows Online</title>
+</head>
+<body  class="animate__animated animate__fadeIn animate__slower 5s user-select-none">
+	
+	<div hidden class="container  ">
+		<nav class="navbar fixed-top  p-0    shadow-none navbar-dark bg-light ">
+			<a class="navbar-brand mx-auto text-primary printers animate__animated animate__rubberBand animate__repeat-1  animate__slower 5s pt-1 pb-1" href="#"><strong>Vik-StreamZ</strong></a>			
+
+						<!-- <a class="navbar-brand mx-auto text-primary printers " href="#"><strong>Vik-StreamZ</strong></a> -->
+
+
+		</nav>				
+
+
+<div class="tabs">
+	
+	<ul class="nav customTextureBG fixed-bottom nav-tabs nav-fill  bg-secondary">
+		<li class="nav-item shadow-sm">
+			<a class="nav-link active" data-toggle="tab" href="#LIVE-TV"><i class="fas fa-2x fa-satellite-dish"></i>&nbsp;&nbsp;<strong>LIVE-TV</strong></a>
+		</li>
+		<li class="nav-item shadow-sm">
+			<a class="nav-link " data-toggle="tab" href="#TV-SHOWS"><i class="fas fa-2x fa-tv-retro "></i>&nbsp;&nbsp;<strong>TV-SHOWS</strong></a>
+		</li>
+		<li class="nav-item shadow-sm">
+			<a class="nav-link " data-toggle="tab" href="#MOVIES"><i class="fas fa-2x fa-camcorder"></i>&nbsp;&nbsp;<strong>MOVIES</strong></a>
+		</li>
+	</ul>
+
+	
+	<div id="myTabContent" class="tab-content ">
+		<div class="empty mb-2">&nbsp;</div>
+		<div class="empty mb-2">&nbsp;</div>
+		<div class=" tab-pane fade show active " id="LIVE-TV">
+			<div class="d-none d-md-block">
+				<nav class=" customTextureBG row mb-0  p-1 bg-light  ml-1 mr-1 ">
+					<div class="col col-8 mt-1 ">
+						    <div class="input-group ">
+
+									
+
+									<span class="input-group-btn shadow-lg">
+										<button id="srchBTNLIVETV" class=" ml-1 btn p-2 pr-3 pl-3 btn-primary  " type="submit">
+											<i class="fa fa-md fa-search "></i>
+										</button>
+									</span>
+
+									<input id="searchBoxInputField1" type="text" class="form-control border text-center shadow-lg "
+									style="height:10px; letter-spacing: 3px;" placeholder="Search TV Channels...">
+
+									{% if CurrentUser %}
+										<span class="input-group-btn shadow-lg">
+											<a href="/logout" class="btn user-Login  btn-sm pt-2  pb-2 pr-2 pl-2  btn-primary ml-1 text-capitalize" >
+												<i class="fa  fa-md fa-user " aria-hidden="true"></i>&nbsp;&nbsp; Logout {{ CurrentUser }}
+											</a>
+
+										</span>
+							       {% endif %}
+
+								</div>
+
+							</div>
+						
+							<div class="col col-4 d-flex justify-content-end ">
+
+								<div class="btn-group mr-1 ml-1 shadow-lg">
+									<button type="button"
+									class="LiveTvDropDownCategoryNamePlate btn btn-primary  btn-sm   dropdown-toggle text-capitalize"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Category
+								</button>
+
+
+
+								<div class=" shadow-lg LiveTvDropDownCategoryoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+									{% for category in Categories4LiveTv %}
+									<a class="dropdown-item " href="#"> {{ category}}</a>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="shadow-lg btn-group">
+								<button type="button"
+								class="LiveTvDropDownLanguageNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Language
+							</button>
+							<div class="shadow-lg LiveTvDropDownLanguageoption dropdown-menu animate__animated animate__fadeIn animate__faster 100">
+								{% for lang in Languages %}
+								<a class="dropdown-item " href="#"> {{ lang }}</a>
+								{% endfor %}
+							</div>
+							<div class="shadow-lg btn-group">
+								<button  class="resetBtn btn btn-primary  btn-sm text-capitalize ml-1">                        
+									Reset
+								</button>
+
+							</div>
+
+
+						</div>
+						<div id="searchIconLiveTV" class=" searchIconLiveTV btn-group ml-1 ">
+							<span class="pressTofilterButton">
+								<i class="fad  btn fa-3x btn-sm btn-primary fa-chevron-circle-right"></i>
+							</span>
+
+							<button  hidden id="btnSpinner1" class="btn btn-sm btn-primary" type="button">
+								<!-- <span class="spinner-border spinner-border "
+								style="width: 1.79rem; height: 1.79rem;" role="status"
+								aria-hidden="true"></span> -->
+								<span><i class="fa  fa-2x fa-cog fa-spin "></i></span>
+							</button>
+
+						</div>
+					</div>
+				</nav>
+
+				<div hidden id="searchBoxResultsDiv1" class=" ml-5 overflow-auto animate__animated animate__fadeIn animate__faster 100">
+					<div  id="listGroupSearchResultsDiv1" class="list-group ml-4 ">                           
+					</div>
+				</div>
+			</div>   <!-- live tv d-none d-md-block -->
+
+			<div class="d-block  d-md-none">
+				<nav class=" customTextureBG  mb-0  p-1 bg-light  ml-0 mr-0 ">
+					<div class="row col-12 mt-1 ml-0 mr-0 pl-0 pr-0">
+						    <div class="input-group ">
+									
+
+									<input id="searchBoxInputField11" type="text" class="form-control border text-center shadow-lg "
+									style="height:10px; letter-spacing: 3px;" placeholder="Search TV Channels...">
+
+									
+
+							</div>
+
+					</div>
+						
+							<div class="row col-12 d-flex justify-content-center mt-1 ml-0 mr-0 ">
+
+								<div class="btn-group btn-sm shadow-lg pl-0 pr-0 ml-1">
+									<button type="button"
+									class="LiveTvDropDownCategoryNamePlate btn btn-primary  btn-sm   dropdown-toggle text-capitalize"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Category
+									</button>
+
+
+
+								<div class=" shadow-lg LiveTvDropDownCategoryoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+									{% for category in Categories4LiveTv %}
+									<a class="dropdown-item " href="#"> {{ category}}</a>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="shadow-lg btn-group btn-sm pl-0 pr-0 ml-1">
+								<button type="button"
+								class="LiveTvDropDownLanguageNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Language
+							</button>
+							<div class="shadow-lg LiveTvDropDownLanguageoption dropdown-menu animate__animated animate__fadeIn animate__faster 100">
+								{% for lang in Languages %}
+								<a class="dropdown-item " href="#"> {{ lang }}</a>
+								{% endfor %}
+							</div>
+							<div class="shadow-lg btn-group pl-0 pr-0 ml-0">
+								<button  class="resetBtn btn btn-primary  btn-sm text-capitalize ml-1">                        
+									Reset
+								</button>
+
+							</div>
+
+
+						</div>
+						<div id="searchIconLiveTV" class="searchIconLiveTV btn-group ml-1 btn-sm pl-0 pr-0 ml-1">
+							<span class="pressTofilterButton">
+								<i class="fad  btn fa-3x btn-sm btn-primary fa-chevron-circle-right"></i>
+							</span>
+
+							<button hidden id="btnSpinner1" class="btn btn-sm btn-primary ml-1" type="button">
+								<!-- <span class="spinner-border spinner-border "
+								style="width: 1.79rem; height: 1.79rem;" role="status"
+								aria-hidden="true"></span> -->
+								<span><i class="fa  fa-2x fa-cog fa-spin "></i></span>
+							</button>
+
+						</div>
+					</div>
+				</nav>
+
+				<div hidden id="searchBoxResultsDiv11" class="overflow-auto animate__animated animate__fadeIn animate__faster 100">
+					<div  id="listGroupSearchResultsDiv11" class="list-group">                           
+					</div>
+				</div>
+			</div>   <!-- live tv small md searchtab -->
+
+
+
+
+
+
+
+			<div class="row    text-center text-lg-left mt-3  mb-5 ml-1 mr-1">
+				
+				<div id="csrf_token">{% csrf_token %}</div>
+				{% for item in FrontView_LiveTV_querset_LIST %}
+				<div class="LiveTvThumnails   col-lg-2 col-md-4 col-6  text-center pr-2 pl-2">
+					<a channelNumber="{{ item.id }}" VideoSrc="{{ item.channelURL }}" data-toggle="modal"
+					data-target=".PLAYER_MODAL" class="vidAnchor d-block mb-4 h-120 text-decoration-none  ">
+					<img class=" animate__animated animate__fadeIn img-fluid img-thumbnail shadow-lg " src="{{ item.poster.url }}" alt="">
+					<br><strong> {{ item.channelName }}</strong>
+				</a>
+			</div>
+			{% endfor %}
+
+
+
+		
+
+		</div> 
+	</div> <!--  end of tab  LIVE-TV -->
+	
+	
+		<div class="tab-pane fade  " id="TV-SHOWS">
+		<div class="d-none d-md-block ">
+		   <nav class=" row mb-0  p-1 bg-light bg-light ml-1 mr-1">
+		      <div class="col col-8 mt-1">
+		         <div class="input-group ">
+		            <span class="input-group-btn">
+		            <button id="srchBTNTVSHOWS" class="btn  mr-1 p-2 pr-3 pl-3 btn-primary shadow-lg " >
+		            <i class="fa fa-md fa-search"></i>
+		            </button>
+		            </span>
+		            <input id="searchBoxInputField2" type="text" class="form-control border text-center shadow-lg"
+		               style="height:10px; letter-spacing: 3px;" placeholder="Search Tv Shows...">
+		            {% if CurrentUser %}
+		            <span class="input-group-btn shadow-lg">
+		            <a href="/logout" class="btn user-Login  btn-sm pt-2  pb-2 pr-2 pl-2  btn-primary ml-1 text-capitalize" >
+		            <i class="fa  fa-md fa-user " aria-hidden="true"></i>&nbsp;&nbsp; Logout {{ CurrentUser }}
+		            </a>
+		            </span>
+		            {% endif %}
+		         </div>
+		      </div>
+		      <div class="col col-4 d-flex justify-content-end">
+		         <div class="shadow-lg btn-group mr-1">
+		            <button type="button"
+		               class="TvshowsDropDownCategoryNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize animate__animated animate__fadeIn"
+		               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		            Category
+		            </button>
+		            <div class="shadow-lg TvshowsDropDownCategoryoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+		               {% for category in Categories4Tvshows %}
+		               <a class="dropdown-item " href="#"> {{ category }}</a>
+		               {% endfor %}
+		            </div>
+		         </div>
+		         <div class="btn-group">
+		            <button type="button"
+		               class=" shadow-lg TvshowsDropDownLanguageNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize animate__animated animate__fadeIn animate__faster 100"
+		               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		            Language
+		            </button>
+		            <div class=" TvshowsDropDownLanguageoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+		               {% for lang in Languages %}
+		               <a class="dropdown-item " href="#"> {{ lang }}</a>
+		               {% endfor %}
+		            </div>
+		            <div class="btn-group shadow-lg">
+		               <button    class="resetBtn btn btn-primary  btn-sm text-capitalize ml-1">                        
+		               Reset
+		               </button>
+		            </div>
+		         </div>
+		         <div  class=" searchIconTVshows shadow-lg btn-group ml-1 ">
+		            <span class="pressTofilterButton"> <i
+		               class="fad btn fa-3x fa-3x btn-sm btn-primary fa-chevron-circle-right"></i></span>
+		            <button hidden id="btnSpinner2" class="btn btn-sm btn-primary" type="button">
+		          
+		               <span><i class="fa  fa-2x fa-cog fa-spin "></i></span>
+		            </button>
+		         </div>
+		      </div>
+		   </nav>
+		   <div hidden id="searchBoxResultsDiv2" class="ml-5 overflow-auto animate__animated animate__fadeIn animate__faster 100">
+		      <div  id="listGroupSearchResultsDiv2" class="list-group ml-4 ">                                  
+		      </div>
+		   </div>
+		</div>  <!-- TV SHOWS d-none d-md-block -->
+
+
+		<div class="d-block  d-md-none">
+				<nav class=" customTextureBG  mb-0  p-1 bg-light  ml-0 mr-0 ">
+					<div class="row col-12 mt-1 ml-0 mr-0 pl-0 pr-0">
+						    <div class="input-group ">
+								
+
+									<input id="searchBoxInputField22" type="text" class="form-control border text-center shadow-lg "
+									style="height:10px; letter-spacing: 3px;" placeholder="Search TV Shows...">
+
+									
+
+							</div>
+
+					</div>
+						
+							<div class="row col-12 d-flex justify-content-center mt-1 ml-0 mr-0 ">
+
+								<div class="btn-group btn-sm shadow-lg pl-0 pr-0 ml-1">
+									<button type="button"
+									class="TvshowsDropDownCategoryNamePlate btn btn-primary  btn-sm   dropdown-toggle text-capitalize"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Category
+									</button>
+
+
+
+								<div class=" shadow-lg TvshowsDropDownCategoryoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+									{% for category in Categories4Tvshows %}
+									<a class="dropdown-item " href="#"> {{ category}}</a>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="shadow-lg btn-group btn-sm pl-0 pr-0 ml-1">
+								<button type="button"
+								class="TvshowsDropDownLanguageNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Language
+							</button>
+							<div class="shadow-lg TvshowsDropDownLanguageoption dropdown-menu animate__animated animate__fadeIn animate__faster 100">
+								{% for lang in Languages %}
+								<a class="dropdown-item " href="#"> {{ lang }}</a>
+								{% endfor %}
+							</div>
+							<div class="shadow-lg btn-group pl-0 pr-0 ml-0">
+								<button  class="resetBtn btn btn-primary  btn-sm text-capitalize ml-1">                        
+									Reset
+								</button>
+
+							</div>
+
+
+						</div>
+						<div  class="searchIconTVshows btn-group ml-1 btn-sm pl-0 pr-0 ml-1">
+							<span class="pressTofilterButton">
+								<i class="fad  btn fa-3x btn-sm btn-primary fa-chevron-circle-right"></i>
+							</span>
+
+							<button hidden id="btnSpinner2" class="btn btn-sm btn-primary" type="button">
+								
+								<span><i class="fa  fa-2x fa-cog fa-spin "></i></span>
+							</button>
+
+						</div>
+					</div>
+				</nav>
+
+				<div  hidden id="searchBoxResultsDiv22" class="overflow-auto animate__animated animate__fadeIn animate__faster 100">
+					<div  id="listGroupSearchResultsDiv22" class="list-group">                           
+					</div>
+				</div>
+			</div>   <!-- tvshows small md searchtab -->
+
+
+
+	<div class="row d-flex justify-content-center text-center text-lg-left  mt-3 mb-5">
+		{% for item in FrontView_TvShow_querset_LIST %}
+		<!-- <div class="Tv_Shows_Thumnails   col-lg-2 col-md-4 col-6  text-center pr-2 pl-2">
+			<a showNumber="{{ item.id }}" VideoSrc="{{ item.showURL }}" data-toggle="modal"
+			data-target=".PLAYER_MODAL" class="vidAnchor d-block mb-4 h-120 text-decoration-none  ">
+			<img class=" animate__animated animate__fadeIn img-fluid img-thumbnail shadow-lg " src="{{ item.poster.url }}" alt="">
+			<br><strong> {{ item.ShowName }}</strong>
+			</a>
+		</div> -->
+
+		<div class="Tv_Shows_Thumnails   col-lg-6 col-md-12 col-sm-12   text-center ">
+			<div class="row bg-light mb-3 ml-1 mr-1">
+				<div class="GetshowNumber col-4 pr-2 pl-0 ">
+					<a showNumber="{{ item.id }}" VideoSrc="{{ item.showURL }}" data-toggle="modal"
+					data-target=".PLAYER_MODAL" class="vidAnchor d-block mb-4 h-120 text-decoration-none  ">
+					<img class=" shadow-lg  animate__animated animate__fadeIn img-fluid img-thumbnail shadow-lg " src="{{ item.poster.url }}" alt="">
+					<strong hidden="true"> {{ item.ShowName }}</strong>
+					</a>
+				</div>
+
+				<div class="col-8 pl-2 pr-2  text-justify shadow-lg" style="height: 170px;">
+				<div class="text-center mx-auto h6 text-primary mt-1 "> {{ item.ShowName }}</div>
+				<p class="text-left">{{ item.description|slice:":80" }}
+
+				
+				<a href="#collapse" class="toggleReadMore" data-toggle="modal" data-target="#show1modal{{ item.id }}">Read More</a>
+				</p>
+
+				<div class="modal animate__animated animate__headShake animate__faster 50" id="show1modal{{ item.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">							
+							<div class="modal-body  bg-light p-2">
+								
+								<div class=" shadow-lg bg-light">
+									<div class="d-flex justify-content-center" ><img  class="w-50" src="/media/{{ item.poster }}"></div>
+								<div class="text-center mx-auto h6 text-primary mt-1 "> {{ item.ShowName }}</div>
+								<p class="pl-2 pr-1">{{ item.description }}</p>
+								<div class="d-flex justify-content-center">
+									<button type="button" class="btn btn-sm btn-primary text-capitalize" data-dismiss="modal">Close</button>
+								</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="row ml-1 mr-1  ">
+					<!-- <a style="width: 20%;" class=" btn btn-sm btn-primary pt-1 pb-1  text-light"> -->
+					<span class="btn btn-primary p-2 shadow"><i class="fa fa-md fa-star" aria-hidden="true"></i>{{ item.ratings }}</a></span>
+					<span poster="{{ item.poster.url }}" itemName="{{ item.ShowName }}" data-toggle="modal" data-target=".PLAYER_MODAL" showNumber="{{ item.id }}" VideoSrc="{{ item.showURL }}" class="playButton btn btn-primary p-2 ml-1 text-capitalize shadow">
+					<i class="fa fa-lg fa-play-circle" aria-hidden="true"></i>Play</span>
+					
+					<!-- <a style="width: 50%;" href="#" class="btn btn-sm btn-primary pt-1 pb-1 ml-1  ">Play</a> -->
+					
+				</div>
+				
+				</div>
+			</div>
+			
+		</div>
+
+	{% endfor %}
+</div>
+		
+		</div> <!--  end of tab TV-SHOWS -->
+		
+		
+		<div class="tab-pane fade " id="MOVIES">
+			<div class="d-none d-md-block ">
+				<nav class=" row mb-0  p-1 bg-light bg-light ml-1 mr-1">
+					<div class="col col-8 mt-1">
+						<div class="input-group ">
+							<span class="input-group-btn shadow-lg">
+								<button id="srchBTNMOVIES" class="btn  mr-1 p-2 pr-3 pl-3 btn-primary shadow " type="submit">
+									<i class="fa fa-md fa-search"></i>
+								</button>
+							</span>
+							<input id="searchBoxInputField3" type="text" class="form-control border text-center shadow-lg "
+							style="height:10px; letter-spacing: 3px;" placeholder="Search Movies...">
+							{% if CurrentUser %}
+												<span class="input-group-btn shadow-lg">
+													<a href="/logout" class="btn user-Login  btn-sm pt-2  pb-2 pr-2 pl-2  btn-primary ml-1 text-capitalize" >
+														<i class="fa  fa-md fa-user " aria-hidden="true"></i>&nbsp;&nbsp; Logout {{ CurrentUser }}
+													</a>
+
+												</span>
+										   {% endif %}
+						</div>
+					</div>
+					<div class="col col-4 d-flex justify-content-end">
+						<div class="btn-group mr-1 shadow-lg">
+							<button type="button"
+							class="MovieSDropDownCategoryNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize animate__animated animate__fadeIn"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Category
+						</button>
+						<div class="shadow-lg MovieSDropDownCategoryoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+							{% for category in Categories4Movies %}
+							<a class="dropdown-item " href="#"> {{ category}}</a>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="shadow-lg btn-group">
+						<button type="button"
+						class="MovieSDropDownLanguageNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize animate__animated animate__fadeIn animate__faster 100"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Language
+					</button>
+					<div class=" MovieSDropDownLanguageoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+						{% for lang in Languages %}
+						<a class="dropdown-item " href="#"> {{ lang }}</a>
+						{% endfor %}
+					</div>
+					<div class="btn-group">
+						<button class="shadow-lg resetBtn btn btn-primary  btn-sm text-capitalize ml-1">                        
+							Reset
+						</button>
+
+					</div>
+				</div>
+
+				<div id="searchIconMoviesN" class="btn-group ml-1 ">
+					<span class="pressTofilterButton"> <i
+						class="fad btn fa-3x fa-3x btn-sm btn-primary btn-sm btn-primary fa-chevron-circle-right"></i></span>
+						<button  hidden id="btnSpinner3" class="btn btn-sm btn-primary ml-1" type="button">
+							
+							<span><i class="fa  fa-2x fa-cog fa-spin "></i></span>
+						</button>
+					</div>
+				</div>
+			</nav>
+
+			<div hidden id="searchBoxResultsDiv3" class="ml-5 overflow-auto animate__animated animate__fadeIn">
+				<div  id="listGroupSearchResultsDiv3" class="list-group ml-4 ">                                  
+				</div>
+			</div>
+		</div>   <!-- MOVIES FIRST searchtab -->
+
+			<div class="d-block  d-md-none">
+				<nav class=" customTextureBG  mb-0  p-1 bg-light  ml-0 mr-0 ">
+					<div class="row col-12 mt-1 ml-0 mr-0 pl-0 pr-0">
+						    <div class="input-group ">
+									<input id="searchBoxInputField33" type="text" class="form-control border text-center shadow-lg "
+									style="height:10px; letter-spacing: 3px;" placeholder="Search Movies...">
+							</div>
+
+					</div>
+						
+							<div class="row col-12 d-flex justify-content-center mt-1 ml-0 mr-0 ">
+
+								<div class="btn-group btn-sm shadow-lg pl-0 pr-0 ml-1">
+									<button type="button"
+									class="MovieSDropDownCategoryNamePlate btn btn-primary  btn-sm   dropdown-toggle text-capitalize"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Category
+									</button>
+
+
+
+								<div class=" shadow-lg MovieSDropDownCategoryoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+									{% for category in Categories4Movies %}
+									<a class="dropdown-item " href="#"> {{ category}}</a>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="shadow-lg btn-group btn-sm pl-0 pr-0 ml-1">
+								<button type="button"
+								class="MovieSDropDownLanguageNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Language
+							</button>
+							<div class="shadow-lg MovieSDropDownLanguageoption dropdown-menu animate__animated animate__fadeIn animate__faster 100">
+								{% for lang in Languages %}
+								<a class="dropdown-item " href="#"> {{ lang }}</a>
+								{% endfor %}
+							</div>
+							<div class="shadow-lg btn-group pl-0 pr-0 ml-0">
+								<button  class="resetBtn btn btn-primary  btn-sm text-capitalize ml-1">                        
+									Reset
+								</button>
+
+							</div>
+
+
+						</div>
+						<div  id="searchIconMoviesN" class="  btn-group ml-1 btn-sm pl-0 pr-0 ml-1">
+							<span class="pressTofilterButton">
+								<i class="fad  btn fa-3x btn-sm btn-primary fa-chevron-circle-right"></i>
+							</span>
+
+							<button  hidden id="btnSpinner3" class="btn btn-sm btn-primary ml-1" type="button">
+								
+								<span><i class="fa  fa-2x fa-cog fa-spin "></i></span>
+							</button>
+
+						</div>
+					</div>
+				</nav>
+
+				<div  hidden id="searchBoxResultsDiv33" class="overflow-auto animate__animated animate__fadeIn animate__faster 100">
+					<div  id="listGroupSearchResultsDiv33" class="list-group">                           
+					</div>
+				</div>
+			</div>   <!-- MOVIES small md searchtab -->
+
+
+			<div class="row d-flex justify-content-center text-center text-lg-left mt-2 mb-5">
+				
+				{% for item in FrontView_Movie_querset_LIST %}
+					<div class="Movies_Thumnails   col-lg-2 col-md-4 col-5  text-center pr-1 pl-1 ">
+						<a MovieNumber="{{ item.id }}" VideoSrc="{{ item.MovieURL }}" data-toggle="modal"
+						data-target=".PLAYER_MODAL" class="vidAnchor d-block mb-3  text-decoration-none  ">
+						<img class=" animate__animated animate__fadeIn img-fluid   shadow-lg" src="{{ item.poster.url }}" alt="">
+						<br><strong> {{ item.MovieName }}</strong>
+						</a>
+					</div>
+				{% endfor %}
+		</div>
+		</div>
+		<!--  end of tab MOVIES -->
+		</div>
+
+
+
+
+
+	<!-- Large modal -->
+
+<div class="modal  PLAYER_MODAL shadow-lg" id="myModal" tabindex="-1" role="dialog"
+aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg animate__animated animate__zoomIn animate__faster 100 ">
+	<div class="modal-content mc2">
+		<div class="modal-body p-1 bg-dark ">
+			<div class="d-flex justify-content-center ">
+				<video-js id="my_video_1" class="video-js  vjs-theme-sea vjs-big-play-centered " controls preload="auto"
+				width="800" height="445" poster="">
+			</video-js>
+		</div>
+		<div class="d-flex bg-dark p-1 flex-wrap justify-content-center">
+			<a  id="showEpisode1"><i class="fa fa-lg fa-chevron-circle-down mr-auto  text-primary " aria-hidden="true"></i></a>
+			<a hidden="true" id="showID"></a>
+			<a  id="ModalplayerItemName" disabled class="btn  btn-sm btn-primary mx-auto " style="letter-spacing: 1.2px;">Null</a>	
+			<a  id="showEpisode2"><i class="fa fa-lg fa-chevron-circle-down ml-auto mr-1 text-primary" aria-hidden="true"></i></a>
+		</div>
+
+		<div  id="episodesDiv" class="">
+
+			<div     class="d-flex p-0  flex-wrap d-flex justify-content-center animate__animated animate__fadeIn">
+
+				<ul class=" nav nav-tabs bg-dark  p-1  ">
+
+					{% for season in TvSeasons %}
+					 <li  class="mr-1"><a seasonID="{{season.id }}" class="EachSeason btn btn-sm  btn-primary">S{{season}}</a></li>
+					{% endfor %}		
+				</ul>				
+
+				
+			</div> 
+			<div class="episodesListForEachSeason tab-content  d-flex justify-content-center  p-1 ">
+				
+			</div>                     
+
+		</div>
+
+	</div>
+</div>
+</div>
+</div>
+</div>
+<!--  container div end -->
+
+
+
+<script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+<!-- <script src="https://unpkg.com/video.js@7.0.0/dist/video.min.js"></script> -->
+<!-- <script src="https://unpkg.com/video.js@6.7.1/dist/video.js"></script> -->
+<script src="{% static 'js/video.js' %}"></script>
+<!-- <script src="https://vjs.zencdn.net/7.8.4/video.js"></script> -->
+<script src="{% static 'js/popper.min.js' %}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="{% static 'js/videojs-http-streaming.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

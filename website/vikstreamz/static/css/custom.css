@@ -1,0 +1,157 @@
+.vjs-theme-sea .vjs-time-control {
+    line-height: 3em !important;
+}
+
+.vjs-theme-sea .vjs-button>.vjs-icon-placeholder:before {
+    line-height: 1.7 !important; 
+}
+
+.vjs-icon-fullscreen-enter:before{
+	line-height: 1.7 !important; 
+}
+
+div.vjs-control-bar{
+	height: 3em !important; 
+}
+
+.video-js .vjs-big-play-button{
+font-size: 9em;
+}
+
+.vjs-seek-to-live-control{
+	display: none !important; 
+}
+
+
+#searchBoxResultsDiv11, #searchBoxResultsDiv22, #searchBoxResultsDiv33{
+	 position: absolute;
+    z-index: 1;
+    margin-top: -45px;
+}
+
+#searchBoxResultsDiv1, #searchBoxResultsDiv2, #searchBoxResultsDiv3{
+position: absolute;
+z-index: 1;
+margin-top: -11px;
+height:310px;
+}
+
+#listGroupSearchResultsDiv1, #listGroupSearchResultsDiv2, #listGroupSearchResultsDiv3, #listGroupSearchResultsDiv11, #listGroupSearchResultsDiv22, #listGroupSearchResultsDiv33{
+  opacity: 0.95;        
+}
+
+#listGroupSearchResultsDiv1, #listGroupSearchResultsDiv2, #listGroupSearchResultsDiv3, #listGroupSearchResultsDiv11, #listGroupSearchResultsDiv22, #listGroupSearchResultsDiv33 a:hover{
+ cursor: pointer;    
+}
+
+input:placeholder{
+font-size: 10px;
+}
+
+a#showEpisode1:hover{
+	cursor: pointer;
+}
+
+a#showEpisode2:hover{
+	cursor: pointer;
+}
+
+.opacity-0h5 {
+	opacity: 0 !important;
+	transition: opacity .25s ease-in-out !important;
+	-moz-transition: opacity .25s ease-in-out !important;
+	-webkit-transition: opacity .25s ease-in-out !important;
+}
+
+.opacity-0h5:hover {
+	opacity: 1 !important;
+}
+
+.img-thumbnail {
+	border: none !important;
+	border-style: none !important;
+}
+
+.img-thumbnail:hover {
+	cursor: pointer;
+}
+
+.vidAnchor img {
+	height: 170px;
+	width: 100%;
+}
+
+.border-3 {
+	border-width: 3px !important;
+}
+
+/*.customTextureBG {
+	background-color: #fafafa;
+	background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+}
+*/
+.navbar,
+body,
+ .nav-link {
+	/*-color: #fafafa;*/
+    /*background-image: url("http://www.transparenttextures.com/patterns/brilliant.png");*/
+	/*background-color: #faf5f5;*/
+    /*background-image: url("http://www.transparenttextures.com/patterns/diagonal-striped-brick.png");*/
+	background-color: #faf5f5;
+	background-image: url("/media/bg.png");
+}
+
+
+.navbar, .nav a {
+	font-family: 'Audiowide', cursive;
+	/*font-family: 'Baloo 2', cursive;
+	/*font-family: 'Do Hyeon', sans-serif;*/
+	/*font-family: 'Fredoka One', cursive;*/
+	/*font-family: 'Righteous', cursive;*/
+}
+
+/*custom scrollbar 4 firefox*/
+:root{
+  scrollbar-color: rgb(33, 150, 243) rgb(255, 246, 235) !important;
+}
+
+
+/* scroll 4 chrome */
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+
+::-webkit-scrollbar-thumb {
+	background: #2196f3;
+	border-radius: 20px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+	background: orange;
+}
+
+
+/*navbrand logo settings */
+.printers {
+	letter-spacing: .20em;
+	text-shadow: 8px 8px 7px rgba(193, 94, 221, 0.43), 0px -0px 0 #fe6161, 2px 1px 3px #737272, 1px 1px 1px #37408C;
+}
+
+/*consistent hidden scrollbar , visible when needed*/
+body {
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+}
+
+.Movies_Thumnails img{
+	height: 230px;
+	width: 200px;
+}
+
+.vidAnchor img:hover {
+	cursor: pointer;
+}

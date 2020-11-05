@@ -1,0 +1,41 @@
+
+<!-- code for web player embed in bootstrap modal -->
+<!-- one web player is used for all video playing on entire site, it can switch currently playing video to which the user click on demand -->
+
+<div class="modal  PLAYER_MODAL shadow-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg animate__animated animate__zoomIn animate__faster 100 ">
+		<div class="modal-content mc2">
+			<div class="modal-body p-1 bg-dark ">
+				<div class="d-flex justify-content-center ">
+					<video-js id="my_video_1" class="video-js  vjs-theme-sea vjs-big-play-centered " controls preload="auto"
+					width="800" height="445" poster="">
+				</video-js>
+			</div>
+			<div class="d-flex bg-dark p-1 flex-wrap justify-content-center">
+				<a  id="showEpisode1"><i class="fa fa-lg fa-chevron-circle-down mr-auto  text-primary " aria-hidden="true"></i></a>
+				<a hidden="true" id="showID"></a>
+				<a  id="ModalplayerItemName" disabled class="btn  btn-sm btn-primary mx-auto " style="letter-spacing: 1.2px;">Null</a>	
+				<a  id="showEpisode2"><i class="fa fa-lg fa-chevron-circle-down ml-auto mr-1 text-primary" aria-hidden="true"></i></a>
+			</div>
+
+			<div  id="episodesDiv" class="">
+
+				<div     class="d-flex p-0  flex-wrap d-flex justify-content-center animate__animated animate__fadeIn">
+
+					<ul class=" nav nav-tabs bg-dark  p-1  ">
+
+						{% for season in TvSeasons %}
+						<li  class="mr-1"><a seasonID="{{season.id }}" class="EachSeason btn btn-sm  btn-primary">S{{season}}</a></li>
+						{% endfor %}		
+					</ul>				
+
+				</div> 
+				<div class="episodesListForEachSeason tab-content  d-flex justify-content-center  p-1 ">
+
+				</div>                     
+			</div>
+
+		</div>
+	</div>
+</div>
+</div>

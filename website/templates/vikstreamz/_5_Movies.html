@@ -1,0 +1,156 @@
+
+
+<!-- html file containing code for MOVIES tab -->
+<div class="tab-pane fade " id="MOVIES">
+	<div class="d-none d-md-block ">
+		<nav class=" row mb-0  p-1 bg-light bg-light ml-1 mr-1">
+			<div class="col col-8 mt-1">
+				<div class="input-group ">
+					<span class="input-group-btn shadow-lg">
+						<button id="srchBTNMOVIES" class="btn  mr-1 p-2 pr-3 pl-3 btn-primary shadow " type="submit">
+							<i class="fa fa-md fa-search"></i>
+						</button>
+					</span>
+					<input id="searchBoxInputField3" type="text" class="form-control border text-center shadow-lg "
+					style="height:10px; letter-spacing: 3px;" placeholder="Search Movies...">
+					{% if CurrentUser %}
+					<span class="input-group-btn shadow-lg">
+						<a href="/logout" class="btn user-Login  btn-sm pt-2  pb-2 pr-2 pl-2  btn-primary ml-1 text-capitalize" >
+							<i class="fa  fa-md fa-user " aria-hidden="true"></i>&nbsp;&nbsp; Logout {{ CurrentUser }}
+						</a>
+
+					</span>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col col-4 d-flex justify-content-end">
+				<div class="btn-group mr-1 shadow-lg">
+					<button type="button"
+					class="MovieSDropDownCategoryNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize animate__animated animate__fadeIn"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Category
+				</button>
+				<div class="shadow-lg MovieSDropDownCategoryoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+					{% for category in Categories4Movies %}
+					<a class="dropdown-item " href="#"> {{ category}}</a>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="shadow-lg btn-group">
+				<button type="button"
+				class="MovieSDropDownLanguageNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize animate__animated animate__fadeIn animate__faster 100"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Language
+			</button>
+			<div class=" MovieSDropDownLanguageoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+				{% for lang in Languages %}
+				<a class="dropdown-item " href="#"> {{ lang }}</a>
+				{% endfor %}
+			</div>
+			<div class="btn-group">
+				<button class="shadow-lg resetBtn btn btn-primary  btn-sm text-capitalize ml-1">                        
+					Reset
+				</button>
+
+			</div>
+		</div>
+
+		<div id="searchIconMoviesN" class="btn-group ml-1 ">
+			<span class="pressTofilterButton"> <i class="fa fa-lg btn btn-primary fa-arrow-alt-circle-right  "></i></span>
+				<button  hidden id="btnSpinner3" class="btn btn-sm btn-primary ml-1" type="button">
+
+					<span><i class="fa  fa-2x fa-cog fa-spin "></i></span>
+				</button>
+			</div>
+		</div>
+	</nav>
+
+	<div hidden id="searchBoxResultsDiv3" class="ml-5 overflow-auto animate__animated animate__fadeIn">
+		<div  id="listGroupSearchResultsDiv3" class="list-group ml-4 ">                                  
+		</div>
+	</div>
+</div>   <!-- MOVIES FIRST searchtab -->
+
+<div class="d-block  d-md-none">
+	<nav class=" customTextureBG  mb-0  p-1 bg-light  ml-0 mr-0 ">
+		<div class="row col-12 mt-1 ml-0 mr-0 pl-0 pr-0">
+			<div class="input-group ">
+				<input id="searchBoxInputField33" type="text" class="form-control border text-center shadow-lg "
+				style="height:10px; letter-spacing: 3px;" placeholder="Search Movies...">
+			</div>
+
+		</div>
+
+		<div class="row col-12 d-flex justify-content-center mt-1 ml-0 mr-0 ">
+
+			<div class="btn-group btn-sm shadow-lg pl-0 pr-0 ml-1">
+				<button type="button"
+				class="MovieSDropDownCategoryNamePlate btn btn-primary  btn-sm   dropdown-toggle text-capitalize"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Category
+			</button>
+
+
+
+			<div class=" shadow-lg MovieSDropDownCategoryoption dropdown-menu text-capitalize animate__animated animate__fadeIn animate__faster 100">
+				{% for category in Categories4Movies %}
+				<a class="dropdown-item " href="#"> {{ category}}</a>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="shadow-lg btn-group btn-sm pl-0 pr-0 ml-1">
+			<button type="button"
+			class="MovieSDropDownLanguageNamePlate btn btn-primary  btn-sm dropdown-toggle text-capitalize"
+			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Language
+		</button>
+		<div class="shadow-lg MovieSDropDownLanguageoption dropdown-menu animate__animated animate__fadeIn animate__faster 100">
+			{% for lang in Languages %}
+			<a class="dropdown-item " href="#"> {{ lang }}</a>
+			{% endfor %}
+		</div>
+		<div class="shadow-lg btn-group pl-0 pr-0 ml-0">
+			<button  class="resetBtn btn btn-primary  btn-sm text-capitalize ml-1">                        
+				Reset
+			</button>
+
+		</div>
+
+
+	</div>
+	<div  id="searchIconMoviesN" class="  btn-group ml-1 btn-sm pl-0 pr-0 ml-1">
+		<span class="pressTofilterButton">
+			<i class="fa fa-lg btn btn-primary fa-arrow-alt-circle-right  "></i>
+		</span>
+
+		<button  hidden id="btnSpinner3" class="btn btn-sm btn-primary ml-1" type="button">
+
+		<span><i class="fa  fa-2x fa-cog fa-spin p-1"></i></span>
+		</button>
+
+	</div>
+</div>
+</nav>
+
+<div  hidden id="searchBoxResultsDiv33" class="overflow-auto animate__animated animate__fadeIn animate__faster 100">
+	<div  id="listGroupSearchResultsDiv33" class="list-group">                           
+	</div>
+</div>
+</div>   <!-- MOVIES small md searchtab -->
+
+
+<div class="row d-flex justify-content-center text-center text-lg-left mt-2 mb-5">
+
+	{% for item in FrontView_Movie_querset_LIST %}
+	<div class="Movies_Thumnails   col-lg-2 col-md-4 col-5  text-center pr-1 pl-1 ">
+		<a MovieNumber="{{ item.id }}" VideoSrc="{{ item.MovieURL }}" data-toggle="modal"
+		data-target=".PLAYER_MODAL" class="vidAnchor d-block mb-3  text-decoration-none  ">
+		<img class=" animate__animated animate__fadeIn img-fluid   shadow-lg" src="{{ item.poster.url }}" alt="">
+		<br><strong> {{ item.MovieName }}</strong>
+	</a>
+</div>
+{% endfor %}
+</div>
+</div>
+<!--  end of tab MOVIES -->
+</div>
